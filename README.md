@@ -5,4 +5,4 @@ This project has the purpose to undertand if it's better to parallelize the proj
 ## Installing GlobalProtect
 ## Installing MobsXTerm
 ## Accessing the cluster
-## Compiling the .pbs file
+## Compiling the `.pbs` file
