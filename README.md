@@ -7,6 +7,8 @@ This project has the purpose to undertand if it's better to parallelize the proj
 
 when you open it, put as portal `vpn-mfa.icts.unitn.it`
 
-### Installing MobsXTerm
+### Installing MobaXTerm
+MAC and Linux provide a built-in SSH client, but I'm on windows so I installed Mobaxterm (PuTTY is a valid alternative). To install mobaxterm, visit [the official web page](https://mobaxterm.mobatek.net/)
 ### Accessing the cluster
+with the terminal (for MAC and Linux) or mobaxterm open, digit `YourName.YourSurname@hpc.unitn.it` and with the password of the istitutional mail you can access the cluster
 ### Compiling the `.pbs` file
