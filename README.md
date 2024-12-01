@@ -29,6 +29,6 @@ after you saw the name of the pbs file, use qsub `NameOfThePbsFile.pbs` to run i
 
 <img src="Images_readme/qsub.jpg" alt="qsub" width="500">
 
-with qstat -u `YourName.YourSurname`
+with qstat -u `YourName.YourSurname` you can see the status of your pbs
 
 <img src="Images_readme/qstat.jpg" alt="qstat" width="500">
