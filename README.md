@@ -12,23 +12,23 @@ MAC and Linux provide a built-in SSH client, but I'm on windows so I installed M
 ## Accessing the cluster
 with the terminal (for MAC and Linux) or mobaxterm open, digit `ssh YourName.YourSurname@hpc.unitn.it` and with the password of the istitutional mail you can access the cluster
 
-<img src="Images_readme/ssh.jpg" alt="ssh" width="600">
+<img src="Images_readme/ssh.jpg" alt="ssh" width="500">
 
 ## Compiling the `.pbs` file
 Move the desired directory into your mobaxterm
 
 Then, digit into the terminal cd `Name of the directory you want to use`
 
-<img src="Images_readme/cd.jpg" alt="cd" width="600">
+<img src="Images_readme/cd.jpg" alt="cd" width="500">
 
 use ls to see the files available
 
-<img src="Images_readme/ls.jpg" alt="ls" width="600">
+<img src="Images_readme/ls.jpg" alt="ls" width="500">
 
 after you saw the name of the pbs file, use qsub `NameOfThePbsFile.pbs` to run it
 
-<img src="Images_readme/qsub.jpg" alt="qsub" width="600">
+<img src="Images_readme/qsub.jpg" alt="qsub" width="500">
 
 with qstat -u `YourName.YourSurname`
 
-<img src="Images_readme/qstat.jpg" alt="qstat" width="600">
+<img src="Images_readme/qstat.jpg" alt="qstat" width="500">
