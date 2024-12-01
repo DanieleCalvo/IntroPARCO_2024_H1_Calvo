@@ -1,0 +1,64 @@
+#!/bin/bash
+# Job name
+#PBS -N MultiCppTest
+# Output files
+#PBS -o ./MultiCppTest.o
+#PBS -e ./MultiCppTest.e
+# Queue name
+#PBS -q short_cpuQ
+# Set the maximum wall time
+#PBS -l walltime=5:00:00
+# Number of nodes, CPUs, and memory allocation
+#PBS -l select=1:ncpus=64:mem=1gb
+
+# Load required modules
+module load gcc91
+g++() {
+    g++-9.1.0 "$@"
+}
+g++ --version
+
+# Change to the working directory
+cd /home/daniele.calvo/Implicit/
+
+output_file="result.csv"
+echo "Type, Threads, Dimension, Time" > $output_file
+n_threads=("1" "2" "4" "8" "16" "32" "64")
+N=("4" "5" "6" "7" "8" "9" "10" "11" "12")
+n_times=100
+
+# Source files and executables
+declare -a sources=("work_IMP.cpp" "work_IMP.cpp" "work_IMP.cpp" "work_IMP.cpp" "work_IMP.cpp" "work_IMP.cpp" "work_IMP.cpp")
+declare -a executables=("work" "work2" "work3" "work4" "work5" "work6" "work7")
+declare -a flags=("-fopenmp -march=native -ftree-vectorize -fomit-frame-pointer -frename-registers"
+"-fopenmp -march=native -ftree-vectorize -fomit-frame-pointer -frename-registers -fprefetch-loop-arrays"
+"-fopenmp -march=native -ftree-vectorize -fomit-frame-pointer -frename-registers -fno-stack-protector"
+"-fopenmp -march=native -ftree-vectorize -fomit-frame-pointer -frename-registers -fprefetch-loop-arrays -fno-stack-protector"
+"-fopenmp -march=native -floop-parallelize-all -fomit-frame-pointer -frename-registers -fprefetch-loop-arrays"
+"-fopenmp -march=native -floop-parallelize-all -fomit-frame-pointer -frename-registers -fno-stack-protector"
+"-fopenmp -march=native -floop-parallelize-all -fomit-frame-pointer -frename-registers -fprefetch-loop-arrays -fno-stack-protector")
+# Loop through all sources, compile and execute
+for k in "${n_threads[@]}"; do
+    for g in "${N[@]}"; do
+        for i in "${!sources[@]}"; do
+            echo "Compiling ${sources[$i]}..."
+            g++ -o "${executables[$i]}" "${sources[$i]}" ${flags[$i]}
+            if [ $? -ne 0 ]; then
+                echo "Error during compilation of ${sources[$i]}"
+                exit 1
+            fi
+
+            echo "Compilation completed successfully."
+
+            # Collect outputs in an array for this column
+            echo "Execution $j of ${executables[$i]}..."
+            result=$("./${executables[$i]}" $g $k $n_times $i)
+            if [ $? -ne 0 ]; then
+                echo "Error during execution $j of ${executables[$i]}."
+                exit 1
+            fi
+        done
+    done
+done
+
+echo "All tasks completed successfully."
