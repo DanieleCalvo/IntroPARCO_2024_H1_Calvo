@@ -38,3 +38,5 @@ with qstat -u `YourName.YourSurname` you can see the status of your pbs
 
 Sometime the pbs refuse to collaborate. It could be that the file is considered in windows mode. To change it, open it with the default text editor and change it
 on top left (you'll see many icons, click on the penguin) (remember to save the file before you close it).
+
+P.S. my results is the merging of more pbs, to have more values and more accurate results
