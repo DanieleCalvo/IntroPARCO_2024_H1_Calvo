@@ -27,10 +27,14 @@ use ls to see the files available
 
 <img src="Images_readme/ls.jpg" alt="ls" width="500">
 
-after you saw the name of the pbs file, use qsub `NameOfThePbsFile.pbs` to run it
+after you saw the name of the pbs file, open it clicking it on the left (where you moved it), so you can change the path to  `/home/YourName.YourSurname/DirectoryName/`
+then, use qsub `NameOfThePbsFile.pbs` to run it
 
 <img src="Images_readme/qsub.jpg" alt="qsub" width="500">
 
 with qstat -u `YourName.YourSurname` you can see the status of your pbs
 
 <img src="Images_readme/qstat.jpg" alt="qstat" width="500">
+
+Sometime the pbs refuse to collaborate. It could be that the file is considered in windows mode. To change it, open it with the default text editor and change it
+on top left (you'll see many icons, click on the penguin) (remember to save the file before you close it).
