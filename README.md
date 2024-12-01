@@ -18,6 +18,6 @@ Then, digit into the terminal cd `Name of the directory you want to use`
 
 use ls to see the files available
 
-use qsub `NameOfThePbsFile.pbs` to use it
+after you saw the name of the pbs file, use qsub `NameOfThePbsFile.pbs` to run it
 
 with qstat -u `YourName.YourSurname`
