@@ -17,6 +17,8 @@ with the terminal (for MAC and Linux) or mobaxterm open, digit `ssh YourName.You
 ## Compiling the `.pbs` file
 Move the desired directory into your mobaxterm
 
+<img src="Images_readme/move.jpg" alt="move" width="500">
+
 Then, digit into the terminal cd `Name of the directory you want to use`
 
 <img src="Images_readme/cd.jpg" alt="cd" width="500">
