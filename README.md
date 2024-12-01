@@ -20,12 +20,12 @@ Then, digit into the terminal cd `Name of the directory you want to use`
 
 use ls to see the files available
 
-![](Images_readme/ls.jpg)
+<img src="Images_readme/ls.jpg" alt="ls" width="600">
 
 after you saw the name of the pbs file, use qsub `NameOfThePbsFile.pbs` to run it
 
-![](Images_readme/qsub.jpg)
+<img src="Images_readme/qsub.jpg" alt="qsub" width="600">
 
 with qstat -u `YourName.YourSurname`
 
-![](Images_readme/qstat.jpg)
+<img src="Images_readme/qstat.jpg" alt="qstat" width="600">
