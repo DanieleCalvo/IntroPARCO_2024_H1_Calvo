@@ -10,5 +10,14 @@ when you open it, put as portal `vpn-mfa.icts.unitn.it`
 ### Installing MobaXTerm
 MAC and Linux provide a built-in SSH client, but I'm on windows so I installed Mobaxterm (PuTTY is a valid alternative). To install mobaxterm, visit [the official web page](https://mobaxterm.mobatek.net/)
 ### Accessing the cluster
-with the terminal (for MAC and Linux) or mobaxterm open, digit `YourName.YourSurname@hpc.unitn.it` and with the password of the istitutional mail you can access the cluster
+with the terminal (for MAC and Linux) or mobaxterm open, digit `ssh YourName.YourSurname@hpc.unitn.it` and with the password of the istitutional mail you can access the cluster
 ### Compiling the `.pbs` file
+Move the desired directory into your mobaxterm
+
+Then, digit into the terminal cd `Name of the directory you want to use`
+
+use ls to see the files available
+
+use qsub `NameOfThePbsFile.pbs` to use it
+
+with qstat -u `YourName.YourSurname`
